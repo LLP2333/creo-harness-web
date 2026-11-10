@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creo Harness — 用对话修改 Creo 模型</title>
+  <meta name="description" content="Creo Harness 是面向 Creo Parametric 的 AI 助手：用对话浏览模型，修改参数、尺寸和关系式，创建原生特征，并在网页中查看 STEP 预览。">
+  <meta property="og:title" content="Creo Harness — 用对话修改 Creo 模型">
+  <meta property="og:description" content="面向 Creo Parametric 的 AI 助手。每次修改都经过核对、写入、再生和回读，不隐式保存。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon.png">
+  <meta name="theme-color" content="#0b1420">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/favicon.png" alt="" width="28" height="28">
+      <span>Creo Harness</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">功能</a>
+      <a href="#how">工作方式</a>
+      <a href="#start">上手</a>
+      <a href="#requirements">系统要求</a>
+    </nav>
+    <a class="btn btn-small" href="#get">申请试用</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">面向 Creo Parametric 的 AI 助手</p>
+        <h1>用对话修改 Creo 模型，<br>每一步都有回读。</h1>
+        <p class="lede">
+          在 DeepSeek Harness 里说出你要改什么。Creo Harness 负责核对目标、写入、再生，再把模型里的实际结果读回来给你看。参数、尺寸、关系式和原生特征都能这样操作。
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#get">申请试用</a>
+          <a class="btn btn-ghost" href="#features">看看能做什么</a>
+        </div>
+        <p class="hero-meta">当前版本 v0.2.0 · 支持 Creo 6.0.6 / 8.0 · Windows 10/11 x64</p>
+      </div>
+
+      <!-- 示意：一次参数修改 -->
+      <figure class="demo" aria-label="示意：通过对话修改一个参数">
+        <div class="demo-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="demo-title">mounting_plate.prt</span>
+          <span class="demo-tag">未保存</span>
+        </div>
+        <div class="demo-body">
+          <div class="msg msg-user">把安装板厚度改成 8 mm，先不要保存。</div>
+
+          <ol class="receipt">
+            <li><span class="step">核对</span><span>THICKNESS · 实数 · 访问状态完整</span></li>
+            <li><span class="step">写入</span><span><s>6.000</s> → 8.000</span></li>
+            <li><span class="step">再生</span><span>成功，无失败特征</span></li>
+            <li class="ok"><span class="step">回读</span><span>THICKNESS = 8.000</span></li>
+          </ol>
+
+          <div class="msg msg-ai">
+            厚度已改为 8 mm，再生通过。模型还没有保存，需要落盘时告诉我。
+          </div>
+
+          <table class="params">
+            <thead><tr><th>参数</th><th>类型</th><th>值</th></tr></thead>
+            <tbody>
+              <tr><td>LENGTH</td><td>实数</td><td>80.000</td></tr>
+              <tr><td>WIDTH</td><td>实数</td><td>50.000</td></tr>
+              <tr class="changed"><td>THICKNESS</td><td>实数</td><td>8.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>界面示意</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 功能 -->
+  <section id="features" class="section">
+    <div class="wrap">
+      <h2>能做什么</h2>
+      <p class="section-lede">围绕机械设计工程师每天在 Creo 里重复的操作，通过对话或参数面板完成。</p>
+
+      <div class="features">
+        <article class="feature">
+          <h3>浏览与打开模型</h3>
+          <p>列出 Creo 工作目录里的零件、装配和工程图，按路径和数字版本打开。同名但路径或版本不同的模型会被拒绝，避免改错对象。</p>
+        </article>
+        <article class="feature">
+          <h3>参数、尺寸与关系式</h3>
+          <p>读取并修改参数、尺寸和完整关系式。一次调用完成核对、写入、再生和回读，你看到的是模型里的实际值。</p>
+        </article>
+        <article class="feature">
+          <h3>装配参数提升</h3>
+          <p>把子模型的参数提升为装配参数，建立父到子的关系驱动，在装配层统一控制零件。</p>
+        </article>
+        <article class="feature">
+          <h3>原生特征建模</h3>
+          <p>从项目模板创建零件或装配，创建草绘、拉伸和旋转；向已有零件追加孔、圆角、倒角、抽壳和一方向尺寸阵列。生成的是可继续编辑的原生特征。</p>
+        </article>
+        <article class="feature">
+          <h3>参数面板</h3>
+          <p>不想打字时，直接在面板里新增、修改、删除参数，应用到 Creo，再单独保存或导出预览。AI 和面板走同一条操作队列。</p>
+        </article>
+        <article class="feature">
+          <h3>显式保存与操作回执</h3>
+          <p>普通修改和预览都不会隐式保存，落盘是单独的一步。每次操作留下持久化回执，超时后可以查询结果，不必盲目重发。</p>
+        </article>
+      </div>
+
+      <div class="shot">
+        <div class="shot-copy">
+          <h3>STEP 网页预览</h3>
+          <p>改完直接在浏览器里看几何：旋转、平移、缩放，切换等轴测、正视、俯视和线框，按模型结构显示或隐藏零件。</p>
+          <p>每个模型只保留最新一次导出，重新导出后刷新同一个链接即可。预览是只读快照，不会保存模型。</p>
+        </div>
+        <img src="assets/step-preview.png" alt="Creo Harness 模型预览页面：左侧为模型选择和结构树，右侧显示一个带四个孔的环形零件" width="1280" height="720" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 工作方式 -->
+  <section id="how" class="section section-dark">
+    <div class="wrap">
+      <h2>工作方式</h2>
+      <p class="section-lede">对话和参数面板共用同一个 CreoBridge，所有操作排进一条串行队列，按顺序进入 Creo。</p>
+
+      <div class="arch">
+        <div class="arch-col">
+          <p class="arch-host">你的电脑</p>
+          <div class="node">DSH 对话<small>Creo Assistant Skill → MCP</small></div>
+          <div class="node">参数面板<small>DSH Host → Control API</small></div>
+          <div class="node node-quiet">CAD Viewer<small>浏览器中的 STEP 预览</small></div>
+        </div>
+
+        <div class="arch-link" aria-hidden="true"><span>HTTP</span></div>
+
+        <div class="arch-col arch-core">
+          <p class="arch-host">协调层</p>
+          <div class="node node-core">CreoBridge<small>唯一串行队列 · 会话状态 · 操作回执</small></div>
+          <div class="node node-quiet">Artifact Store<small>各模型最新 STEP 与校验信息</small></div>
+        </div>
+
+        <div class="arch-link" aria-hidden="true"><span>HTTP</span></div>
+
+        <div class="arch-col">
+          <p class="arch-host">Windows 工作站</p>
+          <div class="node">CREOSON<small>J-Link / JNI 原生扩展</small></div>
+          <div class="node node-creo">Creo Parametric<small>会话模型 → 显式保存 → 原生文件</small></div>
+          <div class="node node-quiet">dufs<small>模型目录浏览与 STEP 传输</small></div>
+        </div>
+      </div>
+
+      <ul class="facts">
+        <li><strong>23</strong><span>个经过收敛的 AI 工具，而不是把全部底层接口直接交给模型</span></li>
+        <li><strong>0</strong><span>次隐式保存。修改成功不等于已保存，落盘由你决定</span></li>
+        <li><strong>HTTP</strong><span>传输命令和文件，不需要挂载共享盘，浏览器不直连 Creo 服务</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 上手 -->
+  <section id="start" class="section">
+    <div class="wrap">
+      <h2>三步上手</h2>
+      <ol class="steps">
+        <li>
+          <h3>启动 Windows 客户端</h3>
+          <p>解压与 Creo 版本对应的 <code>creoHarnessClient</code> 运行包，打开 <code>creo-harness.exe</code>，输入激活码，填写 Creo 安装路径和模型工作目录，启动服务。</p>
+        </li>
+        <li>
+          <h3>在 DSH 中安装插件</h3>
+          <p>在 DeepSeek Harness 桌面端的 Plugins → Add plugin 中安装 Creo Harness 插件，然后在设置里填写 Windows 工作站的服务地址和文件服务凭据。</p>
+        </li>
+        <li>
+          <h3>打开模型，开始对话</h3>
+          <p>试试这样说：</p>
+          <blockquote>列出 Creo 工作目录中的模型，不要打开或保存。</blockquote>
+          <blockquote>打开 parts/example.prt，读取参数，不要保存。</blockquote>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 系统要求与限制 -->
+  <section id="requirements" class="section section-tint">
+    <div class="wrap two-col">
+      <div>
+        <h2>系统要求</h2>
+        <dl class="specs">
+          <div><dt>Creo</dt><dd>Creo Parametric 6.0.6 或 8.0，客户端包需与所装版本一致</dd></div>
+          <div><dt>Windows 工作站</dt><dd>Windows 10/11 x64。运行包自带 JRE、dufs 和 WebView2，无需另装</dd></div>
+          <div><dt>对话端</dt><dd>DeepSeek Harness 网页或桌面端，以及你自己的 AI 模型配置</dd></div>
+          <div><dt>网络</dt><dd>两端通过受信任的局域网或 VPN 互通；客户端激活和续期需要联网</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2>目前不做的事</h2>
+        <ul class="limits">
+          <li>不提供任意特征生成、齿轮设计，也不能从 STEP 恢复原生特征树。</li>
+          <li>队列不能锁定 Creo 界面。操作期间请避免同时手动编辑同一目标。</li>
+          <li>网格预览用于观察几何，不用于精确测量。</li>
+          <li>超时不代表失败。先查询回执和实际模型，再决定是否重试。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 获取 -->
+  <section id="get" class="section section-dark cta">
+    <div class="wrap">
+      <img src="assets/icon.png" alt="" width="88" height="88" loading="lazy">
+      <h2>在你的 Creo 上试一试</h2>
+      <p class="section-lede">Windows 客户端需要激活码。留下你的 Creo 版本和使用场景，我们会回复获取方式。</p>
+      <a class="btn" href="https://github.com/LLP2333/creo-harness-web/issues/new?title=%E7%94%B3%E8%AF%B7%E8%AF%95%E7%94%A8%20Creo%20Harness">申请试用</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 Creo Harness</span>
+    <span class="footer-note">Creo 与 Creo Parametric 是 PTC Inc. 的商标。本产品与 PTC 无隶属关系。</span>
+  </div>
+</footer>
+
+</body>
+</html>
