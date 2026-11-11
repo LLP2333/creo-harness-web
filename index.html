@@ -26,6 +26,7 @@
       <a href="#how">工作方式</a>
       <a href="#start">上手</a>
       <a href="#requirements">系统要求</a>
+      <a href="https://account.qvqw.date">账号中心</a>
     </nav>
     <a class="btn btn-small" href="#get">下载</a>
   </div>
@@ -175,7 +176,7 @@
       <ol class="steps">
         <li>
           <h3>启动 Windows 客户端</h3>
-          <p>解压与 Creo 版本对应的 <code>creoHarnessClient</code> 运行包，打开 <code>creo-harness.exe</code>，输入激活码，填写 Creo 安装路径和模型工作目录，启动服务。</p>
+          <p>解压与你的 Creo 版本对应的运行包，打开 <code>creo-harness.exe</code>。在带有邮箱登录的客户端中，输入邮箱并获取验证码，填回验证码即可登录。首次验证会自动创建免费账号。填写 Creo 安装路径和模型工作目录后，点击「启动服务」。</p>
         </li>
         <li>
           <h3>在 DSH 中安装插件</h3>
@@ -200,7 +201,7 @@
           <div><dt>Creo</dt><dd>Creo Parametric 6.0.6 或 8.0，客户端包需与所装版本一致</dd></div>
           <div><dt>Windows 工作站</dt><dd>Windows 10/11 x64。运行包自带 JRE、dufs 和 WebView2，无需另装</dd></div>
           <div><dt>对话端</dt><dd>DeepSeek Harness 网页或桌面端，以及你自己的 AI 模型配置</dd></div>
-          <div><dt>网络</dt><dd>两端通过受信任的局域网或 VPN 互通；客户端激活和续期需要联网</dd></div>
+          <div><dt>网络</dt><dd>两端通过受信任的局域网或 VPN 互通。免费版每次启动服务时需要联网校验账号。登录有效期为 30 天，到期后用邮箱验证码重新登录。</dd></div>
         </dl>
       </div>
       <div>
@@ -226,7 +227,8 @@
         <a class="btn" href="https://github.com/LLP2333/creo-harness-web/releases/latest/download/creoHarnessClient-creo-8.0.0.0.zip">下载 Creo 8.0.0.0 版</a>
         <a class="btn btn-ghost" href="https://github.com/LLP2333/creo-harness-web/releases/latest/download/creo-harness-dsh-plugin-creo.tgz">下载 DeepSeek Harness 插件</a>
       </div>
-      <p class="section-lede">首次启动 Windows 客户端需<a href="https://github.com/LLP2333/creo-harness-web/issues/new?title=%E7%94%B3%E8%AF%B7%E8%AF%95%E7%94%A8%20Creo%20Harness">申请试用激活码</a>。版本信息和 SHA-256 校验值见<a href="https://github.com/LLP2333/creo-harness-web/releases/latest">发布页</a>。</p>
+      <p class="section-lede">任何人都可以用邮箱免费注册。可在支持邮箱登录的 Windows 客户端中直接注册和登录，也可访问<a href="https://account.qvqw.date">账号中心</a>。如果客户端仍显示「激活码」，请在<a href="https://github.com/LLP2333/creo-harness-web/releases/latest">发布页</a>核对是否已提供支持邮箱登录的版本。</p>
+      <p id="commercial" class="section-lede">工作站无法访问公网？如需商用离线版，请<a href="https://github.com/LLP2333/creo-harness-web/issues/new?title=%E5%95%86%E7%94%A8%E7%A6%BB%E7%BA%BF%E7%89%88%E5%92%A8%E8%AF%A2">联系开发者咨询部署</a>。</p>
     </div>
   </section>
 
