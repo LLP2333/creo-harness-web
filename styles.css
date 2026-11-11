@@ -458,7 +458,13 @@ blockquote {
 .cta { text-align: center; }
 .cta img { margin: 0 auto 24px; }
 .cta .section-lede { margin-inline: auto; }
-.cta .btn { margin-top: 32px; }
+.download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px 0 20px;
+}
 
 /* 页脚 */
 .footer {
