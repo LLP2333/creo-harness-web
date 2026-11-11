@@ -44,7 +44,7 @@
           在 DeepSeek Harness 里说出你要改什么。Creo Harness 负责核对目标、写入、再生，再把模型里的实际结果读回来给你看。参数、尺寸、关系式和原生特征都能这样操作。
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#get">下载 Windows 安装器和插件</a>
+          <a class="btn" href="#get">下载 Windows 安装器</a>
           <a class="btn btn-ghost" href="#features">看看能做什么</a>
         </div>
         <p class="hero-meta">支持 Creo 6.0.6 / 8.0 · Windows 10/11 x64</p>
@@ -176,11 +176,11 @@
       <ol class="steps">
         <li>
           <h3>启动 Windows 客户端</h3>
-          <p>首次使用请先<a href="https://account.qvqw.date/register">免费注册账号</a>。填写邮箱和图形验证码，收到邮件后输入验证码并设置密码。运行 <a href="#get">Windows 安装器</a>。它会识别已安装的 Creo，多版本时可选择目标，也可手动指定 Common Files。安装完成后打开 Creo Harness，选择模型工作目录，用邮箱和密码登录并启动服务。</p>
+          <p>首次使用请先<a href="https://account.qvqw.date/register">免费注册账号</a>。填写邮箱和图形验证码，收到邮件后输入验证码并设置密码。运行 <a href="#get">Windows 安装器</a>。它会识别已安装的 Creo，多版本时可选择目标，也可手动指定 Common Files。安装完成后打开 Creo Parametric 和 Creo Harness，选择模型工作目录，用邮箱和密码登录并启动服务。</p>
         </li>
         <li>
           <h3>连接 DeepSeek Harness</h3>
-          <p>DSH 和 Creo 在同一台 Windows 电脑时，Creo Harness 会为本机 DSH 桌面端安装随附插件。若 DSH 在另一台电脑，请在那里<a href="#get">下载独立插件</a>，在「插件 → 添加插件」中选择或填写 TGZ 路径，再填写 Windows 服务地址和文件服务凭据。</p>
+          <p>同机使用时，先安装 DSH 桌面端，打开一次并完全退出。启动 Creo Harness 后，它会安装随附的 Creo 插件。若 DSH 此时已打开，请完全退出 DSH，在 Creo Harness 中重试。安装成功后重新打开 DSH。两台电脑请按<a href="#remote">异机连接</a>设置。</p>
         </li>
         <li>
           <h3>打开模型，开始对话</h3>
@@ -220,12 +220,13 @@
   <section id="get" class="section section-dark cta">
     <div class="wrap">
       <img src="assets/icon.png" alt="" width="88" height="88" loading="lazy">
-      <h2>下载 Windows 安装器和插件</h2>
+      <h2>下载 Windows 安装器</h2>
       <p class="section-lede">在 Creo 工作站运行同一个安装器。安装器联网下载匹配的 Creo 运行包，同版本的 DSH 插件已随安装器提供。</p>
       <div class="download-actions">
         <a class="btn" href="https://github.com/LLP2333/creo-harness-web/releases/latest/download/CreoHarnessSetup.exe">下载 Windows 安装器</a>
-        <a class="btn btn-ghost" href="https://github.com/LLP2333/creo-harness-web/releases/latest/download/creo-harness-dsh-plugin-creo.tgz">下载独立 DSH 插件</a>
       </div>
+      <h3 id="remote">异机连接</h3>
+      <p class="section-lede">在 Windows 客户端的高级设置中开启「允许其他电脑通过局域网连接」，保存并启动服务。在另一台电脑的 DSH 桌面端打开「插件 → 添加插件」，粘贴<a href="https://github.com/LLP2333/creo-harness-web/releases/latest/download/creo-harness-dsh-plugin-creo.tgz">独立插件下载链接</a>，也可先下载 TGZ 再填入本地路径。安装后在「设置 → Creo 连接配置」中填写 Windows 客户端的服务地址和文件服务凭据。</p>
       <p class="section-lede">原先用邮件验证码登录的用户，请用原邮箱<a href="https://account.qvqw.date/reset">找回密码</a>，原账号及数据会保留。登录后可在<a href="https://account.qvqw.date/profile">个人资料</a>中选填昵称和手机号。换电脑时，可在<a href="https://account.qvqw.date/devices">我的设备</a>选择旧电脑并确认解绑，为新电脑释放名额。</p>
       <p class="section-lede">以上登录步骤适用于有密码输入框的客户端。如果仍显示激活码或邮件验证码，请在<a href="https://github.com/LLP2333/creo-harness-web/releases/latest">发布页</a>核对客户端版本。</p>
       <p id="commercial" class="section-lede">工作站无法访问公网？如需商用离线版，请<a href="https://github.com/LLP2333/creo-harness-web/issues/new?title=%E5%95%86%E7%94%A8%E7%A6%BB%E7%BA%BF%E7%89%88%E5%92%A8%E8%AF%A2">联系开发者咨询部署</a>。</p>
