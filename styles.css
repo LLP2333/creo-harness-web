@@ -455,16 +455,46 @@ blockquote {
 }
 
 /* 获取 */
-.cta { text-align: center; }
-.cta img { margin: 0 auto 24px; }
-.cta .section-lede { margin-inline: auto; }
-.download-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 32px 0 20px;
+.download-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 72px;
 }
+.download-main img { margin-bottom: 18px; }
+.download-main .btn { margin-top: 24px; }
+.download-platform { margin-top: 12px; color: var(--steel-dim); font-size: 14px; }
+.download-help h3 { margin-bottom: 14px; font-size: 20px; }
+.download-help details { border-top: 1px solid var(--rule-dark); }
+.download-help summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 2px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.download-help summary::-webkit-details-marker { display: none; }
+.download-help summary::after {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border: solid var(--steel);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.download-help details[open] summary::after { transform: rotate(225deg); }
+.download-help summary:hover { color: var(--steel); }
+.download-help summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.download-help p, .download-help ol { color: var(--steel); font-size: 15px; }
+.download-help ol { margin: 0; padding-left: 1.7em; }
+.download-help #remote { scroll-margin-top: 60px; }
+.download-help li + li, .download-help p + p { margin-top: 8px; }
+.download-help details[open] { padding-bottom: 16px; }
+.download-help a { text-underline-offset: 3px; }
+.download-help > p { border-top: 1px solid var(--rule-dark); padding-top: 16px; }
 
 /* 页脚 */
 .footer {
@@ -484,7 +514,8 @@ blockquote {
 /* 响应式 */
 @media (max-width: 900px) {
   .hero { padding: 56px 0 72px; }
-  .hero-grid, .shot, .two-col { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .shot, .two-col, .download-grid { grid-template-columns: minmax(0, 1fr); }
+  .download-grid { gap: 36px; }
   .two-col { gap: 56px; }
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps, .facts { grid-template-columns: minmax(0, 1fr); }
