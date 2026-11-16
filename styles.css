@@ -461,7 +461,7 @@ blockquote {
   gap: 72px;
 }
 .download-main img { margin-bottom: 18px; }
-.download-main .btn { margin-top: 24px; }
+.download-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .download-platform { margin-top: 12px; color: var(--steel-dim); font-size: 14px; }
 .download-help h3 { margin-bottom: 14px; font-size: 20px; }
 .download-help details { border-top: 1px solid var(--rule-dark); }
